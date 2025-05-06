@@ -11,37 +11,29 @@ export const sendEmail = async (formData: FormData) => {
   const senderEmail = formData.get("senderEmail");
   const message = formData.get("message");
 
-  // simple server-side validation
+  // Simple validation
   if (!validateString(senderEmail, 500)) {
-    return {
-      error: "Invalid sender email",
-    };
-  }
-  if (!validateString(message, 5000)) {
-    return {
-      error: "Invalid message",
-    };
+    return { error: "Invalid sender email" };
   }
 
-  let data;
+  if (!validateString(message, 5000)) {
+    return { error: "Invalid message" };
+  }
+
   try {
-    data = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: "bytegrad@gmail.com",
+    const data = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>", // keep this since no domain is verified
+      to: "aftabali123abc@gmail.com", // test emails only to yourself
       subject: "Message from contact form",
-      reply_to: senderEmail,
+      reply_to: senderEmail as string,
       react: React.createElement(ContactFormEmail, {
-        message: message,
-        senderEmail: senderEmail,
+        message: message as string,
+        senderEmail: senderEmail as string,
       }),
     });
-  } catch (error: unknown) {
-    return {
-      error: getErrorMessage(error),
-    };
-  }
 
-  return {
-    data,
-  };
+    return { data };
+  } catch (error: unknown) {
+    return { error: getErrorMessage(error) };
+  }
 };
