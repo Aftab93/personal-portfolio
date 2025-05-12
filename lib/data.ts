@@ -2,10 +2,10 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-// import corpcommentImg from "@/public/corpcomment.png";
 import caffeineClub from "@/public/caffeineclub.png"
 import zaykaZip from "@/public/zaykazip.png";
 import ems from "@/public/ems.png";
+import snake from "@/public/snake.png";
 
 export const links = [
   {
@@ -68,20 +68,31 @@ export const projectsData = [
     description: "Worked as a frontend developer on Caffeine Club, a coffee brand website. Built responsive UI with React and Tailwind CSS to enhance the user experience.",
     tags: ["React", "Tailwind", "Framer Motion"],
     imageUrl: caffeineClub,
+    projectUrl: "https://caffeineclub.netlify.app",
   },
   {
     title: "ZaykaZip",
     description: "Frontend developer for ZaykaZip, a food delivery site. Built responsive UI with React, Tailwind CSS, AOS, and managed state with Redux Toolkit.",
-    tags: ["React", "Tailwind", "Redux","AOS" ],
+    tags: ["React", "Tailwind", "Redux", "AOS"],
     imageUrl: zaykaZip,
+    projectUrl: "https://zaykazip.netlify.app",
   },
   {
     title: "Shiftnow",
     description: "Developed ShiftNow, a task and shift management system using React, Tailwind CSS, and LocalStorage. Implemented responsive UI and task assignment features for employees.",
     tags: ["React", "Tailwind", "Localstorage"],
     imageUrl: ems,
+    projectUrl: "https://shiftnow.netlify.app",
   },
+  {
+    title: "Snake Game",
+    description: "Developed a modern Snake Game using Next.js and React. Implemented mobile-friendly controls, difficulty progression, and random obstacles in hard mode. Features keyboard input and score tracking with local storage.",
+    tags: ["Next.js", "React", "Tailwind CSS", "JavaScript"],
+    imageUrl: snake,
+    projectUrl: "https://snake-game-eight-tawny.vercel.app/",
+},
 ] as const;
+
 
 export const skillsData = [
   "HTML",
